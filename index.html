@@ -38,6 +38,15 @@
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
+  <!-- ======= Dark/Light Mode Toggle ======= -->
+  <div class="theme-toggle">
+    <input type="checkbox" id="theme-checkbox" class="theme-checkbox">
+    <label for="theme-checkbox" class="theme-label">
+      <i class="bx bxs-sun"></i>
+      <i class="bx bxs-moon"></i>
+    </label>
+  </div>
+
   <!-- ======= Header ======= -->
   <header id="header">
     <div class="d-flex flex-column">
@@ -69,7 +78,11 @@
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
       <h1>Sunanda Wasala</h1>
-      <p>I'm <span class="typed" data-typed-items="PHP and UI/UX Developer"></span></p>
+      <p>I'm a <span class="typed" data-typed-items="Web Developer, PHP Specialist, UI/UX Designer, Full-Stack Developer"></span></p>
+      <div class="hero-buttons mt-5">
+        <a href="#portfolio" class="btn-portfolio">View My Work</a>
+        <a href="#contact" class="btn-contact">Get In Touch</a>
+      </div>
     </div>
   </section><!-- End Hero -->
 
@@ -254,253 +267,104 @@
 
         <div class="section-title">
           <h2>Portfolio</h2>
+          <p>Selected projects with real-world impact across web platforms, tools, and SaaS products.</p>
         </div>
 
         <div class="row" data-aos="fade-up">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
+              <li class="filter-active" data-filter="*">All</li>
               <li data-filter=".filter-web">Web</li>
+              <li data-filter=".filter-tool">Tools</li>
             </ul>
           </div>
         </div>
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
 
-
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_17.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_17.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="https://www.adamantgems.com/login" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
+            <article class="portfolio-card">
+              <div class="portfolio-thumb">
+                <img src="assets/img/portfolio/Screenshot_17.png" class="img-fluid" alt="Adamant Gems platform">
               </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_18.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_18.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                <a href="#" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
+              <div class="portfolio-body">
+                <h3>Adamant Gems Platform</h3>
+                <p>Multi-page web platform with secure account flows and business dashboards for jewelry operations.</p>
+                <div class="portfolio-tech"><span>PHP</span><span>MySQL</span><span>Bootstrap</span></div>
+                <a href="https://www.adamantgems.com/login" target="_blank" rel="noopener">visit</a>
               </div>
-            </div>
+            </article>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_38.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_38.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="https://github.com/wasalas893/chat_react" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
+            <article class="portfolio-card">
+              <div class="portfolio-thumb">
+                <img src="assets/img/portfolio/Screenshot_20.png" class="img-fluid" alt="Wingell Hospitality website">
               </div>
-            </div>
+              <div class="portfolio-body">
+                <h3>Wingell Hospitality</h3>
+                <p>Corporate hospitality website with refined UI, responsive layouts, and conversion-focused content sections.</p>
+                <div class="portfolio-tech"><span>WordPress</span><span>CSS</span><span>jQuery</span></div>
+                <a href="https://wingellhospitality.com/" target="_blank" rel="noopener">visit</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-tool">
+            <article class="portfolio-card">
+              <div class="portfolio-thumb">
+                <img src="assets/img/portfolio/Screenshot_39.png" class="img-fluid" alt="OCR project">
+              </div>
+              <div class="portfolio-body">
+                <h3>OCR Toolkit</h3>
+                <p>Machine learning based optical character recognition project with data processing and extraction workflows.</p>
+                <div class="portfolio-tech"><span>Python</span><span>ML</span><span>React</span></div>
+                <a href="https://github.com/codeZero531/optical-character-recognition" target="_blank" rel="noopener">visit</a>
+              </div>
+            </article>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_39.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_39.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="https://github.com/codeZero531/optical-character-recognition" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
+            <article class="portfolio-card">
+              <div class="portfolio-thumb">
+                <img src="assets/img/portfolio/Screenshot_22.png" class="img-fluid" alt="Valiant website">
               </div>
-            </div>
+              <div class="portfolio-body">
+                <h3>Valiant Lanka</h3>
+                <p>Business showcase website featuring optimized performance, modern layout blocks, and SEO-ready structure.</p>
+                <div class="portfolio-tech"><span>Laravel</span><span>Vue</span><span>AWS</span></div>
+                <a href="https://www.valiant.lk/" target="_blank" rel="noopener">visit</a>
+              </div>
+            </article>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_19.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_19.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="https://www.rafflescolombo.com/" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-tool">
+            <article class="portfolio-card">
+              <div class="portfolio-thumb">
+                <img src="assets/img/portfolio/Screenshot_38.png" class="img-fluid" alt="Chat react project">
               </div>
-            </div>
-          </div>
-        
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_20.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_20.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="https://wingellhospitality.com/" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
+              <div class="portfolio-body">
+                <h3>Realtime Chat App</h3>
+                <p>Frontend-focused chat interface with reusable components, realtime updates, and scalable state handling.</p>
+                <div class="portfolio-tech"><span>React</span><span>Redux</span><span>Node</span></div>
+                <a href="https://github.com/wasalas893/chat_react" target="_blank" rel="noopener">visit</a>
               </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_22.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_22.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="https://www.valiant.lk/" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
+            </article>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_23.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_23.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="https://www.dhruvees.com/" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
+            <article class="portfolio-card">
+              <div class="portfolio-thumb">
+                <img src="assets/img/portfolio/Screenshot_40.png" class="img-fluid" alt="Dickson Village website">
               </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_24.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_24.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="https://www.adamantgems.com/" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
+              <div class="portfolio-body">
+                <h3>Dickson Village</h3>
+                <p>Property and community website with intuitive navigation, rich media sections, and responsive experience.</p>
+                <div class="portfolio-tech"><span>PHP</span><span>JavaScript</span><span>Bootstrap</span></div>
+                <a href="https://www.dicksonvillage.com.au" target="_blank" rel="noopener">visit</a>
               </div>
-            </div>
+            </article>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_26.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_26.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="https://www.childactionlanka.org/login" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_27.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_27.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="https://github.com/wasalas893/University_socialnetwork" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_28.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_28.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="https://www.laegoholdings.com/" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_29.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_29.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="http://theseoulstation.com/" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_30.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_30.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="https://vuejs.tpdynamics.com.au/" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_31.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_31.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="https://araam.ca/" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_32.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_32.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="https://backend.slasspa.org/" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_33.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_33.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="https://www.miraculoussrilanka.com/" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_34.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_34.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="https://gplus.tpdynamics.com.au/" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_35.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_35.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="https://www.okloworld.com/" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_36.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_36.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="https://linkingintegrating.com/accessibility/" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_37.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_37.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="https://github.com/wasalas893/next-social-connector" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot_40.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Screenshot_40.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="https://www.dicksonvillage.com.au" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-
-
-          
-          
-          
-
-          
-
-          
-
-          
 
         </div>
 
@@ -553,6 +417,37 @@
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
+
+  <!-- ======= Feedback Widget ======= -->
+  <div class="feedback-widget">
+    <div class="feedback-toggle" id="feedbackToggle">
+      <i class="bx bxs-comment"></i>
+      <span class="feedback-label">Feedback</span>
+    </div>
+    <div class="feedback-popup" id="feedbackPopup">
+      <div class="feedback-header">
+        <h3>How would you rate your experience?</h3>
+        <button class="feedback-close" id="feedbackClose">&times;</button>
+      </div>
+      <div class="feedback-content">
+        <div class="emoji-rating">
+          <div class="emoji-option" data-rating="1" title="Not good at all">😞</div>
+          <div class="emoji-option" data-rating="2" title="Poor">😕</div>
+          <div class="emoji-option" data-rating="3" title="Average">😐</div>
+          <div class="emoji-option" data-rating="4" title="Good">😊</div>
+          <div class="emoji-option" data-rating="5" title="Very good">😍</div>
+        </div>
+        <div class="rating-labels">
+          <span>Not good at all</span>
+          <span>Very good</span>
+        </div>
+      </div>
+      <div class="feedback-footer">
+        <button class="btn-skip" id="skipBtn">Skip</button>
+        <button class="btn-next" id="nextBtn" disabled>Next</button>
+      </div>
+    </div>
+  </div>
 
  
 
