@@ -258,4 +258,90 @@
    */
   new PureCounter();
 
+  /**
+   * Dark/Light Mode Toggle
+   */
+  const themeCheckbox = document.getElementById('theme-checkbox');
+  const body = document.body;
+
+  // Load theme preference from localStorage
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  if (savedTheme === 'dark') {
+    body.classList.add('dark-mode');
+    themeCheckbox.checked = true;
+  }
+
+  // Toggle theme
+  if (themeCheckbox) {
+    themeCheckbox.addEventListener('change', function() {
+      body.classList.toggle('dark-mode');
+      const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+      localStorage.setItem('theme', theme);
+    });
+  }
+
+  /**
+   * Feedback Widget
+   */
+  const feedbackToggle = document.getElementById('feedbackToggle');
+  const feedbackPopup = document.getElementById('feedbackPopup');
+  const feedbackClose = document.getElementById('feedbackClose');
+  const emojiOptions = document.querySelectorAll('.emoji-option');
+  const skipBtn = document.getElementById('skipBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  let selectedRating = null;
+
+  // Toggle feedback popup
+  if (feedbackToggle) {
+    feedbackToggle.addEventListener('click', function() {
+      feedbackPopup.classList.toggle('active');
+    });
+  }
+
+  // Close feedback popup
+  if (feedbackClose) {
+    feedbackClose.addEventListener('click', function() {
+      feedbackPopup.classList.remove('active');
+    });
+  }
+
+  // Handle emoji rating selection
+  emojiOptions.forEach(option => {
+    option.addEventListener('click', function() {
+      emojiOptions.forEach(opt => opt.classList.remove('selected'));
+      this.classList.add('selected');
+      selectedRating = this.getAttribute('data-rating');
+      nextBtn.disabled = false;
+    });
+  });
+
+  // Skip feedback
+  if (skipBtn) {
+    skipBtn.addEventListener('click', function() {
+      feedbackPopup.classList.remove('active');
+      selectedRating = null;
+      emojiOptions.forEach(opt => opt.classList.remove('selected'));
+      nextBtn.disabled = true;
+    });
+  }
+
+  // Submit feedback
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function() {
+      if (selectedRating) {
+        // Here you can send the rating to your server
+        console.log('User rating:', selectedRating);
+        
+        // Close popup and reset
+        feedbackPopup.classList.remove('active');
+        selectedRating = null;
+        emojiOptions.forEach(opt => opt.classList.remove('selected'));
+        nextBtn.disabled = true;
+
+        // Optional: Show success message
+        alert('Thank you for your feedback!');
+      }
+    });
+  }
+
 })()
