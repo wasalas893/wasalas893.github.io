@@ -324,7 +324,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(135deg, #b5ddd9 0%, #a8d5d0 50%, #c2e5e1 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1a2332 50%, #0f1f35 100%);
   position: relative;
   overflow: hidden;
 }
@@ -352,14 +352,14 @@ h6 {
 #hero h1 {
   margin: 0 0 10px 0;
   font-size: 72px;
-  color: #fff;
+  color: #f1f5f9;
   margin-bottom: 50px;
   font-size: 48px;
   font-family: "Space Grotesk", sans-serif;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 700;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
 }
 
 #hero p span {
@@ -378,7 +378,7 @@ h6 {
 #hero p {
   font-size: 20px;
   margin-top: 20px;
-  color: #fff;
+  color: #94a3b8;
   letter-spacing: 0.5px;
 }
 
@@ -400,31 +400,32 @@ h6 {
 }
 
 .btn-portfolio {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(59, 130, 246, 0.15) 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
   color: #fff;
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(59, 130, 246, 0.4);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35);
+  border: 2px solid transparent;
 }
 
 .btn-portfolio:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.3);
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.35) 0%, rgba(59, 130, 246, 0.25) 100%);
-  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.5);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #fff;
 }
 
 .btn-contact {
   background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+  color: #e2e8f0;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .btn-contact:hover {
   background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6);
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 @media (min-width: 1024px) {
@@ -582,104 +583,181 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Akills
---------------------------------------------------------------*/
-.skills .progress {
-  height: 60px;
-  display: block;
-  background: none;
-  border-radius: 0;
-}
-
-.skills .progress .skill {
-  padding: 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 600;
-  font-family: "Space Grotesk", sans-serif;
-  color: #050d18;
-}
-
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
-}
-
-.skills .progress-bar-wrap {
-  background: #dbe3ee;
-  height: 12px;
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.skills .progress-bar {
-  width: 1px;
-  height: 12px;
-  transition: 0.9s;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-cool) 100%);
-}
-
-/*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
 .resume .resume-title {
-  font-size: 26px;
-  font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: var(--ink);
-}
-
-.resume .resume-item {
-  padding: 0 0 20px 20px;
-  margin-top: -2px;
-  border-left: 2px solid #0f172a;
-  position: relative;
-}
-
-.resume .resume-item h4 {
-  line-height: 18px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
+  margin-top: 28px;
+  margin-bottom: 16px;
+  color: var(--ink);
   text-transform: uppercase;
-  font-family: "Space Grotesk", sans-serif;
-  color: #050d18;
-  margin-bottom: 10px;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.resume .resume-item h5 {
-  font-size: 16px;
-  background: #f1f5f9;
-  padding: 5px 15px;
-  display: inline-block;
-  font-weight: 600;
-  margin-bottom: 10px;
+.resume .resume-title i {
+  font-size: 20px;
+  color: var(--accent);
 }
 
-.resume .resume-item ul {
-  padding-left: 20px;
-}
-
-.resume .resume-item ul li {
-  padding-bottom: 10px;
-}
-
-.resume .resume-item:last-child {
-  padding-bottom: 0;
-}
-
-.resume .resume-item::before {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50px;
-  left: -9px;
-  top: 0;
+/* Resume Card */
+.resume-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
   background: #fff;
-  border: 2px solid #0f172a;
+  border: 1px solid #e8eef5;
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resume-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(59, 130, 246, 0.12);
+}
+
+/* Icon badge */
+.rc-icon {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: #fff;
+}
+
+.rc-icon--blue   { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.rc-icon--teal   { background: linear-gradient(135deg, #14b8a6, #0d9488); }
+.rc-icon--purple { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+.rc-icon--green  { background: linear-gradient(135deg, #22c55e, #16a34a); }
+.rc-icon--orange { background: linear-gradient(135deg, #f97316, #ea580c); }
+
+/* Card body */
+.rc-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.rc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.rc-header h4 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.rc-date {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--accent);
+  background: #eef4ff;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.rc-role {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin: 2px 0 6px;
+  font-style: italic;
+}
+
+.rc-desc {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+}
+
+.rc-list {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.rc-list li {
+  margin-bottom: 5px;
+}
+
+/* Summary card extra */
+.resume-summary .rc-body h4 {
+  font-size: 17px;
+}
+
+.rc-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.rc-contact-list span {
+  font-size: 13px;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rc-contact-list span i {
+  color: var(--accent);
+  font-size: 15px;
+}
+
+/* Dark mode */
+body.dark-mode .resume-card {
+  background: #1b2b3b;
+  border-color: #2d3f52;
+  border-left-color: var(--accent);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .rc-header h4 {
+  color: #e2eaf4;
+}
+
+body.dark-mode .rc-date {
+  background: #1e3a5f;
+  color: var(--accent-cool);
+}
+
+body.dark-mode .rc-role {
+  color: #94a3b8;
+}
+
+body.dark-mode .rc-desc,
+body.dark-mode .rc-list,
+body.dark-mode .rc-contact-list span {
+  color: #94a3b8;
+}
+
+body.dark-mode .resume .resume-title {
+  color: #e2eaf4;
 }
 
 /*--------------------------------------------------------------
