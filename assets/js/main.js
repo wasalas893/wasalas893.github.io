@@ -329,7 +329,7 @@
   if (nextBtn) {
     nextBtn.addEventListener('click', function() {
       if (selectedRating) {
-        // Here you can send the rating to your server
+      
         console.log('User rating:', selectedRating);
         
         // Close popup and reset
