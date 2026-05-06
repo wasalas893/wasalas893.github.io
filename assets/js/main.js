@@ -344,4 +344,135 @@
     });
   }
 
+  /**
+   * GitHub stats auto-fill
+   */
+  const githubStatsCard = document.querySelector('[data-github-user]');
+
+  const updateGitHubStats = async () => {
+    if (!githubStatsCard || !window.fetch) {
+      return;
+    }
+
+    const username = githubStatsCard.getAttribute('data-github-user');
+    if (!username) {
+      return;
+    }
+
+    try {
+      const response = await fetch(`https://api.github.com/users/${username}`);
+      if (!response.ok) {
+        throw new Error('GitHub API request failed');
+      }
+
+      const profile = await response.json();
+
+      const reposLink = document.getElementById('github-repos-link');
+      const gistsLink = document.getElementById('github-gists-link');
+      const followersLink = document.getElementById('github-followers-link');
+      const avatar = document.getElementById('github-avatar');
+
+      if (reposLink) {
+        reposLink.textContent = `${profile.public_repos} Public Repos`;
+        reposLink.href = `${profile.html_url}?tab=repositories`;
+      }
+
+      if (gistsLink) {
+        gistsLink.textContent = `${profile.public_gists} Gists`;
+        gistsLink.href = `https://gist.github.com/${username}`;
+      }
+
+      if (followersLink) {
+        followersLink.textContent = `${profile.followers} Followers`;
+        followersLink.href = `${profile.html_url}?tab=followers`;
+      }
+
+      if (avatar && profile.avatar_url) {
+        avatar.src = profile.avatar_url;
+      }
+    } catch (error) {
+      console.warn('Unable to update GitHub stats:', error);
+    }
+  };
+
+  updateGitHubStats();
+
+  /**
+   * Medium profile auto-link
+   */
+  const mediumStatsCard = document.querySelector('[data-medium-url]');
+  const mediumProfileLink = document.getElementById('medium-profile-link');
+
+  if (mediumStatsCard && mediumProfileLink) {
+    const mediumUrl = mediumStatsCard.getAttribute('data-medium-url');
+
+    if (mediumUrl) {
+      mediumProfileLink.href = mediumUrl;
+      mediumProfileLink.textContent = 'View Articles';
+    }
+  }
+
+  /**
+   * Schedule popup modal
+   */
+  const scheduleModal = document.getElementById('scheduleModal');
+  const scheduleBackdrop = document.getElementById('scheduleModalBackdrop');
+  const scheduleModalClose = document.getElementById('scheduleModalClose');
+  const scheduleIframe = document.getElementById('scheduleIframe');
+  const scheduleFallbackLink = document.getElementById('scheduleFallbackLink');
+  const scheduleTriggers = document.querySelectorAll('.js-open-schedule');
+
+  const scheduleUrl = document.body.getAttribute('data-schedule-url') || 'https://calendar.google.com/calendar/appointments/schedules';
+
+  const openScheduleModal = () => {
+    if (!scheduleModal) {
+      return;
+    }
+
+    scheduleModal.classList.add('active');
+    scheduleModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    if (scheduleIframe && !scheduleIframe.src) {
+      scheduleIframe.src = scheduleUrl;
+    }
+
+    if (scheduleFallbackLink) {
+      scheduleFallbackLink.href = scheduleUrl;
+    }
+  };
+
+  const closeScheduleModal = () => {
+    if (!scheduleModal) {
+      return;
+    }
+
+    scheduleModal.classList.remove('active');
+    scheduleModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  if (scheduleTriggers.length) {
+    scheduleTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        openScheduleModal();
+      });
+    });
+  }
+
+  if (scheduleModalClose) {
+    scheduleModalClose.addEventListener('click', closeScheduleModal);
+  }
+
+  if (scheduleBackdrop) {
+    scheduleBackdrop.addEventListener('click', closeScheduleModal);
+  }
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && scheduleModal && scheduleModal.classList.contains('active')) {
+      closeScheduleModal();
+    }
+  });
+
 })()
