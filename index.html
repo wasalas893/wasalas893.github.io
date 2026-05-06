@@ -33,7 +33,7 @@
   ======================================================== -->
 </head>
 
-<body>
+<body data-schedule-url="https://calendar.app.google/bXyhWDdpxH12d9xcA">
 
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
@@ -64,9 +64,9 @@
         <ul>
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="#stats" class="nav-link scrollto"><i class="bx bx-bar-chart-alt-2"></i> <span>Stats</span></a></li>
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-briefcase"></i> <span>Experience</span></a></li>
           <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-grid-alt"></i> <span>Projects</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
         </ul>
       </nav><!-- .nav-menu -->
     </div>
@@ -78,8 +78,7 @@
       <h1>Sunanda Wasala</h1>
       <p>I'm a <span class="typed" data-typed-items="Web Developer, PHP Specialist, UI/UX Designer, Full-Stack Developer"></span></p>
       <div class="hero-buttons mt-5">
-        <a href="#portfolio" class="btn-portfolio">View My Work</a>
-        <a href="#contact" class="btn-contact">Get In Touch</a>
+        <a href="https://calendar.app.google/bXyhWDdpxH12d9xcA" target="_blank" rel="noopener" class="btn-portfolio js-open-schedule">Schedule a Call</a>
       </div>
     </div>
   </section><!-- End Hero -->
@@ -99,7 +98,75 @@
       </div>
     </section><!-- End About Section -->
 
-    <!-- ======= Facts Section ======= -->
+    <!-- ======= Stats Section ======= -->
+    <section id="stats" class="stats section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2>STATS</h2>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-6 col-md-6">
+            <article class="stats-card" data-github-user="wasalas893">
+              <div class="stats-icon stats-icon--avatar">
+                <img id="github-avatar" src="assets/img/profile-img1.jpg" alt="GitHub profile avatar">
+              </div>
+              <div class="stats-content">
+                <h3>GITHUB</h3>
+                <p class="stats-main"><a id="github-repos-link" href="https://github.com/wasalas893?tab=repositories" target="_blank" rel="noopener">0 Public Repos</a></p>
+                <p class="stats-sub"><i class="bx bxl-github"></i> <a id="github-gists-link" class="stats-link" href="https://gist.github.com/wasalas893" target="_blank" rel="noopener">0 Gists</a> <span>|</span> <i class="bx bx-group"></i> <a id="github-followers-link" class="stats-link" href="https://github.com/wasalas893?tab=followers" target="_blank" rel="noopener">0 Followers</a></p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-6 col-md-6">
+            <article class="stats-card" data-medium-url="https://medium.com/@wasalas893">
+              <div class="stats-icon stats-icon--medium">
+                <i class="bx bxl-medium"></i>
+              </div>
+              <div class="stats-content">
+                <h3>MEDIUM</h3>
+                <p class="stats-main"><a id="medium-profile-link" href="https://medium.com/@wasalas893" target="_blank" rel="noopener">View Articles</a></p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-6 col-md-6">
+            <article class="stats-card">
+              <div class="stats-icon stats-icon--whatsapp">
+                <i class="bx bxl-whatsapp"></i>
+              </div>
+              <div class="stats-content">
+                <h3>WHATSAPP</h3>
+                <p class="stats-main"><a href="https://wa.me/94756203108" target="_blank" rel="noopener">0756203108</a></p>
+                <p class="stats-sub">Chat with me directly</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Stats Section -->
+
+    <!-- ======= Schedule Section ======= -->
+    <section id="schedule" class="schedule-call">
+      <div class="container">
+        <div class="section-title">
+          <h2>Schedule a Call</h2>
+          <p>Book a 30-minute meeting with me on Google Calendar.</p>
+        </div>
+
+        <div class="schedule-card" data-aos="fade-up">
+          <div class="schedule-card-icon">
+            <i class="bi bi-calendar-check"></i>
+          </div>
+          <div class="schedule-card-body">
+            <h3>Google Calendar Booking</h3>
+            <p>Choose an available time slot and confirm your meeting instantly.</p>
+            <a href="https://calendar.app.google/bXyhWDdpxH12d9xcA" target="_blank" rel="noopener" class="schedule-btn js-open-schedule">Open Google Calendar</a>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Schedule Section -->
 
     <!-- ======= Resume Section ======= -->
     <section id="resume" class="resume">
@@ -281,57 +348,44 @@
             </article>
           </div>
 
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <article class="portfolio-card">
+              <div class="portfolio-thumb">
+                <img src="assets/img/portfolio/sonali.png" class="img-fluid" alt="Sonali Dharmawardena">
+              </div>
+              <div class="portfolio-body">
+                <h3>Sonali Dharmawardena</h3>
+                <p>Modern web platform built with Vue.js on the frontend and Laravel with MySQL on the backend.</p>
+                <div class="portfolio-tech"><span>Vue.js</span><span>Laravel</span><span>MySQL</span></div>
+                <a href="https://www.sonalidharmawardena.com/" target="_blank" rel="noopener">visit</a>
+              </div>
+            </article>
+          </div>
+
         </div>
 
       </div>
     </section><!-- End Portfolio Section -->
 
     
-
-   
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-      
-        </div>
-
-        <div class="row" data-aos="fade-in">
-
-          <div class="col-lg-12 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>131/1, Karandagolla, Udadumbara.</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>wasalas893@gmail.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>075 6203108</p>
-              </div>
-
-             
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
   </main><!-- End #main -->
+
+  <!-- ======= Schedule Popup ======= -->
+  <div class="schedule-modal" id="scheduleModal" aria-hidden="true">
+    <div class="schedule-modal-backdrop" id="scheduleModalBackdrop"></div>
+    <div class="schedule-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="scheduleModalTitle">
+      <div class="schedule-modal-header">
+        <h3 id="scheduleModalTitle">Schedule a Call</h3>
+        <button type="button" class="schedule-modal-close" id="scheduleModalClose" aria-label="Close schedule popup">&times;</button>
+      </div>
+      <div class="schedule-modal-body">
+        <iframe id="scheduleIframe" title="Google Calendar Schedule" loading="lazy"></iframe>
+      </div>
+      <div class="schedule-modal-footer">
+        <a id="scheduleFallbackLink" href="https://calendar.app.google/bXyhWDdpxH12d9xcA" target="_blank" rel="noopener" class="schedule-btn">Open in New Tab</a>
+      </div>
+    </div>
+  </div>
 
   <!-- ======= Feedback Widget ======= -->
   <div class="feedback-widget">
