@@ -72,6 +72,116 @@
   }
 
   /**
+   * GSAP animations
+   */
+  const initGsapAnimations = () => {
+    if (!window.gsap || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return
+    }
+
+    const { gsap } = window
+
+    if (window.ScrollTrigger) {
+      gsap.registerPlugin(window.ScrollTrigger)
+    }
+
+    gsap.timeline({
+      defaults: {
+        ease: 'power3.out'
+      }
+    })
+      .from('#hero .hero-copy', {
+        autoAlpha: 0,
+        y: 40,
+        duration: 0.9
+      })
+      .from('#hero .hero-eyebrow', {
+        autoAlpha: 0,
+        y: 16,
+        duration: 0.45
+      }, '-=0.55')
+      .from('#hero h1', {
+        autoAlpha: 0,
+        y: 22,
+        duration: 0.58
+      }, '-=0.28')
+      .from('#hero p', {
+        autoAlpha: 0,
+        y: 18,
+        duration: 0.5
+      }, '-=0.32')
+      .from('#hero .hero-buttons a', {
+        autoAlpha: 0,
+        y: 18,
+        stagger: 0.08,
+        duration: 0.45
+      }, '-=0.28')
+      .from('#hero .hero-socials a', {
+        autoAlpha: 0,
+        y: 14,
+        scale: 0.9,
+        stagger: 0.05,
+        duration: 0.35
+      }, '-=0.22')
+      .from('#hero .hero-visual', {
+        autoAlpha: 0,
+        x: 28,
+        scale: 0.92,
+        duration: 0.72
+      }, '-=0.72')
+
+    if (select('#hero .hero-visual')) {
+      gsap.to('#hero .hero-visual', {
+        y: -10,
+        duration: 2.8,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
+      })
+    }
+
+    if (!window.ScrollTrigger) {
+      return
+    }
+
+    const createScrollReveal = (selector, options = {}) => {
+      gsap.utils.toArray(selector).forEach((element, index) => {
+        gsap.from(element, {
+          autoAlpha: 0,
+          y: options.y ?? 32,
+          duration: options.duration ?? 0.8,
+          ease: options.ease ?? 'power3.out',
+          delay: Math.min(index * (options.staggerStep ?? 0.08), options.maxDelay ?? 0.24),
+          scrollTrigger: {
+            trigger: element,
+            start: options.start ?? 'top 84%',
+            once: true
+          }
+        })
+      })
+    }
+
+    createScrollReveal('.section-title', { y: 26, duration: 0.75 })
+    createScrollReveal('.stats-card', { y: 38, staggerStep: 0.1 })
+    createScrollReveal('.resume-card', { y: 38, staggerStep: 0.08 })
+    createScrollReveal('.portfolio-item', { y: 42, staggerStep: 0.08, start: 'top 88%' })
+    createScrollReveal('.feedback-widget', { y: 24, duration: 0.6, maxDelay: 0 })
+
+    gsap.utils.toArray('.resume-timeline-line').forEach((line) => {
+      gsap.to(line, {
+        scaleY: 1,
+        duration: 1.05,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: line.closest('.resume-column') || line,
+          start: 'top 76%',
+          once: true
+        }
+      })
+    })
+  }
+
+  /**
    * Back to top button
    */
   let backtotop = select('.back-to-top')
@@ -113,6 +223,8 @@
       scrollto(this.hash)
     }
   }, true)
+
+  initGsapAnimations()
 
   /**
    * Scroll with ofset on page load with hash links in the url
@@ -182,6 +294,9 @@
         });
         portfolioIsotope.on('arrangeComplete', function() {
           AOS.refresh()
+          if (window.ScrollTrigger) {
+            window.ScrollTrigger.refresh()
+          }
         });
       }, true);
     }
@@ -439,6 +554,20 @@
 
     if (scheduleFallbackLink) {
       scheduleFallbackLink.href = scheduleUrl;
+    }
+
+    if (window.gsap) {
+      window.gsap.fromTo(scheduleModal.querySelector('.schedule-modal-dialog'), {
+        autoAlpha: 0,
+        y: 28,
+        scale: 0.96
+      }, {
+        autoAlpha: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.45,
+        ease: 'power3.out'
+      });
     }
   };
 
